@@ -38,33 +38,40 @@
           </div>
           <!-- search form end -->
           
- <div class="col-sm-3"  style="color: black; margin-left:900px;padding-bottom:30px;margin-top:-30px;">
-    <!-- <a><i class="fa fa-compass" style="color: black;"></i></a>
-    <a><i class="fa fa-heart-o" style="color: black;"></i></a> -->
-    <!-- <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-o" style="color: black;"></i>
-     
-              <span class="caret"></span>
-          </a> -->
-    <!-- <ul class="dropdown-menu" role="menu">
-      <li> -->
-     
-     
-        <a href="{%url 'mine'%}">My Profile</a>
-     
-        <a href="/accounts/password/change">Change Password</a>
+ <div class="col-sm-4"  style="color: black; margin-left:800px;padding-bottom:30px;margin-top:-30px;">
+  
+    {% if user.is_authenticated %}
+    <ul>
+      <!-- <li class="dropdown">
+        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                  <span class="caret"></span>
+              </a>
+        <ul class="dropdown-menu" role="menu">
+          <li> -->
+              <a href="/accounts/register/">Register</a>/
+              <a class='btn btn-default' href="accounts/login">Login</a>
+         
       
-        <a href="/logout">Logout</a>
-        <a href="{%url 'new-article'%}"><button class="btn btn-info" style="margin-left:150px;"> submit your project</button></a>
-     
-   
-    </ul>
+            <!-- <a href="/accounts/password/change">Change Password</a> -->
+         
+            <a href="/logout">Logout</a>
+            <a href="{%url 'new-article'%}"><button class="btn btn-info" style="margin-left:250px;"> submit your project</button></a>
+            
+      
+        </ul>
+    
+      
+    </li>
+
+    {% endif %}
+  </div>
    </div>
        
       
       </div>
       </nav> 
       
-      
+     
 </body>
 <style>
   a{
