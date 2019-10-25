@@ -19,7 +19,9 @@ urlpatterns=[
     url(r'^search/',  views.search_results,name='search_results'),
     url(r'^likes/(?P<id>\d+)',views.like_it,name="like"),
     url(r'^edit/profile$',  views.edit,name='edit'),
-     url(r'own_page/(\d+)/$', views.page, name='own_page'),
+    url(r'own_page/(\d+)/$', views.page, name='own_page'),
+    url(r'^ajax/newsletter/$', views.newsletter, name='newsletter'),
+    url(r'^api/merch/$', views.MerchList.as_view())
     
 ]
 if settings.DEBUG:
