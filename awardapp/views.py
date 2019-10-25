@@ -19,11 +19,11 @@ def news_today(request):
         form = uploadimageForm(request.POST)
         if form.is_valid():
             print('valid')
-            name = form.cleaned_data['your_name']
+            title = form.cleaned_data['your_title']
             email = form.cleaned_data['email']
-            recipient = NewsLetterRecipients(name = name,email =email)
+            recipient = NewsLetterRecipients(title = title,email =email)
             recipient.save()
-            send_welcome_email(name,email)
+            send_welcome_email(title,email)
             HttpResponseRedirect('news_today')
 
     else:
@@ -60,7 +60,7 @@ def mine(request,username=None):
     # profile=Profile.objects.filter(user=current_user).first()
     if not username:
       username=request.user.username
-      images = Project.objects.filter(name=username)
+      projectes = Project.objects.filter(title=username)
       user_object = request.user
   
     return render(request, 'myprofile.html', locals(),{"pic_images":pic_images})
@@ -109,8 +109,8 @@ def user(request, user_id):
     return render(request, 'profile.html', locals())
 
 @login_required(login_url='/accounts/login/')
-def find(request, name):
-    results = Profile.find_profile(name)
+def find(request, title):
+    results = Profile.find_profile(title)
     return render(request, 'searchresults.html', locals())
 
 @login_required(login_url='/accounts/login/')
@@ -153,3 +153,9 @@ def like_it(request,id):
      image.likes=image.likes+1
      image.save()
      return redirect("newsToday")
+@login_required(login_url='/accounts/login/') 
+def page(request,id):
+   
+    own_page=Project.objects.filter(id=id)
+  
+    return render(request, 'page.html', {"own_page": own_page})

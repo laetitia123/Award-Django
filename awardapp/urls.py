@@ -19,6 +19,7 @@ urlpatterns=[
     url(r'^search/',  views.search_results,name='search_results'),
     url(r'^likes/(?P<id>\d+)',views.like_it,name="like"),
     url(r'^edit/profile$',  views.edit,name='edit'),
+     url(r'own_page/(\d+)/$', views.page, name='own_page'),
     
 ]
 if settings.DEBUG:

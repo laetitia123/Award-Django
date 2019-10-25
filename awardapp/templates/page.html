@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %} 
+{{ block.super}}
+
+
+  
+
+<div class="container">
+    <div class="row">
+            {% for images in own_page %}
+        <div class="col-md-4">
+                {{images.title}}  
+    <img src="{{images.image.url}}"class="image-responsive" width="350" style="height:200px;margin-top:20px">
+</a>
+</div>
+{% endfor %}
+
+</div>
+
+</div>         
+</div>
+{% endblock %}

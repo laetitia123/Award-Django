@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% block content %} 
 {{ block.super}}
 
@@ -12,62 +12,228 @@
   <title>Document</title>
 </head>
 <body >
-  
+  <header>
+    <div class="me">
+<p >site of the  Day October24,2019</p>
+<p id="p">webVR site for The White Tower</p>
+<button class="btn btn-info" id="button">visite site</button>
+    </div>
+  </header>
 
 <div class="container" >
+  <div class="row">
     
+      
+      <!-- <h1>Sites of the day Previous Winners</h1> -->
 
   {% for image in images %}
-  <div class="row">
+ 
+
   
-    <div class="col-sm-3"></div>
-  
-  
-      <div class="col-sm-6" style="border:1px solid whitesmoke;padding-top:20px;" >
-         
+      <div class="col-sm-4" width="300px;" style="border:1px solid whitesmoke;padding-top:20px;" >
+          <div class="wrapper">
+              <div class="parent" onclick="">
+                  <div class="child bg-one">
           
-              <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32">
+              <!-- <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32">
               
               <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong>
-              <p style="margin-left:520px;margin-top:-50px;font-size:30px;">...</p>
+              <p style="margin-left:520px;margin-top:-50px;font-size:30px;">...</p> -->
          
-        <img src="{{image.image.url}} " style="margin-bottom:20px;height:500px"class="img-responsive"  with="200" alt="Image">
+        <img src="{{image.image.url}} " id="image" style=" margin-bottom:20px;height:300px" class="img-fluid"  alt="Image">
         <!-- alt="{{image.user.user.username}}" width="30" height="30"> -->
-    <p>  <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong>  {{image.caption}}</p>
-    <a href="{% url 'like' id=image.id%}"><i class="fa fa-heart-o" style="color: black;size: 150px;"></i></a>
-    <a href="{% url 'comment' image.id %}"><i class="fa fa-comment-o" style="color: black;size: 150px;"></i></a> 
+      </div>
+    <!-- <p><button class="btn btn-primary">vote now</button></p> -->
+    <strong style="color: #333333;cursor: pointer;margin-top:130px">{{image.title}}</strong></h6>
+    <h6 style="margin-left:150px;">{{image.pub_date }}</h6><br></br>
+    <h6>
+       <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32"> 
+       by 
+       <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong></h6>
+  
+    <!-- <a href="{% url 'like' id=image.id%}"><i class="fa fa-heart-o" style="color: black;size: 150px;"></i></a> -->
+    <!-- <a href="{% url 'comment' image.id %}"><i class="fa fa-comment-o" style="color: black;size: 150px;"></i></a>  -->
     <br>
-    <!-- <a  class="btn" href="{% url 'like' id=image.id%}" > -->
-        <p >{{image.likes}} Likes</p>
     
-    </a>
-  {% for com in image.comment_set.all %}
+   
+        
+      
+  <!-- {% for com in image.comment_set.all %}
                 <p>comment:{{com.comment}}</p>
-                {% endfor %}
+                {% endfor %} -->
               <hr>
-              <hr>
+            
                        
-                       
+              <!-- <a  class="btn" href="{% url 'like' id=image.id%}" >      -->
+              <!-- <h6 >{{image.likes}} Likes</h6> -->
+<a href="{% url 'own_page' image.id %}"><button class="btn btn-outline-info">VIEW PROJECT</button></a>
+    
     </div>
-  </div>
+    </div>
+    </div>
 
  
 
           
-</div>
+
 
 {% endfor %}
-
-
-
-{% endblock %}
+</div>
+</div>
 <style>
-  .container{
+
+
+/* Global Styling */
+
+
+#logo {height: 80px; margin-left: 20px;}
+
+.wrapper {
+    /* padding: 50px 50px; */
+    /* max-width: 1200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+        margin-top: 80px; */
+}
+
+.right {float: right !important;}
+/* Image zoom on hover + Overlay colour */
+.parent {
+    /* width: 45%; */
+    /* margin: 20px;
+    height: 300px; */
+    /* border: 1px solid blue; */
+    overflow: hidden;
+    position: relative;
+    /* float: left; */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.child {
+    /* height: 100%;
+    width: 100%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/* Several different images */
+/* .bg-one {background-image: url(https://media.timeout.com/images/101602611/image.jpg);}
+.bg-two {background-image: url(http://s1.it.atcdn.net/wp-content/uploads/2015/08/2-London.jpg);}
+.bg-three {background-image: url(https://media.timeout.com/images/101484105/image.jpg);}
+.bg-four {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Hollywood_Sign.jpg/1280px-Hollywood_Sign.jpg);}
+.bg-five {background-image: url(http://www.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1453920892/DUBAI-554088081-ABOVE0116.jpg?itok=dcoZnCrc);}
+.bg-six {background-image: url(http://blog.whitepages.com/wp-content/uploads/2015/04/san-franc.jpg);} */
+
+
+button{
+    display: none;
+    font-size: 35px;
+    color: #ffffff !important;
+    font-family: sans-serif;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    cursor: pointer;
+    /*text-decoration: none;*/
+}
+
+.parent:hover .child, .parent:focus .child {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.parent:hover .child:before, .parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover button, .parent:focus button{
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    /* height:100%;
+    width:500px; */
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color:black;
+    opacity:0.6;
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .parent {width: 100%; margin: 20px 0px}
+        .wrapper {padding: 20px 20px;}
+}
+
+
+
+
+.hello {display: none}
+
+
+ 
+ 
+  .me{
+    background-image:url('/static/images/award.jpg');
+    
+    height:700px;
+    background-size: cover;
+    background-position: no repeat;
+    color:white;
+    padding-left:50px;
+    padding-top:30px;
+   
+
   }
-  body{
-    background-image:url()
+ 
+  .img-responsive:hover
+    {
+      -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px black;
+      box-shadow: 0 0 10px black;
+    }
+  
+  header{
+    background-color:black;
+    opacity:0,5;
+  }
+  #button{
+    margin-top:150px;
+    margin-left:50px;
+    border-radius: 25px;
+    width:100px;
+  }
+  #p{
+    font-size:45px;
+    text-transform: capitalize;
+    text-align:center;
+    padding-top:250px;
   }
 </style>
+
+{% endblock %}
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+{% bootstrap_javascript %} {% endblock %}
+</div>
 </body>
+
 </html>

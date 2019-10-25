@@ -7,8 +7,8 @@ from django.db.models.signals import post_save
 
 class Project(models.Model):
     title = models.CharField(max_length =60)
-    
-    description = models.ForeignKey(User,on_delete=models.CASCADE)
+    description=models.CharField(max_length =360)
+    profile = models.ForeignKey(User,on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'projectes/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projectes')
