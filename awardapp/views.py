@@ -17,6 +17,11 @@ class MerchList(APIView):
         all_merch = Project.objects.all()
         serializers = MerchSerializer(all_merch, many=True)
         return Response(serializers.data)
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = Project.objects.all()
+        serializers = Profile(all_merch, many=True)
+        return Response(serializers.data)
 def newsletter(request):
     name = request.POST.get('your_name')
     email = request.POST.get('email')
