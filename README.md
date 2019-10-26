@@ -9,7 +9,7 @@ Go to Github account open deployment link at the top
  ### Prerequisites 
 
 <!-- 
-     linux instalation 
+     <!-- linux instalation 
      update linux :sudo apt-get update
      intall paython 3.6: sudo apt-get install python3.6
      install pip:sudo apt-get install python3-pip 
@@ -17,7 +17,7 @@ Go to Github account open deployment link at the top
      install virtual :python3.6 -m venv virtual
      activate virtual: source virtual/bin/activate
      pip install django==1.11 :intall django
-     python3.6 manage.py runserver:to run App
+     python3.6 manage.py runserver:to run App -->
      python3.6 manage.py check:migration
      python3.6 manage.py test gallery:migration
      python manage.py makemigrations gallery
@@ -26,7 +26,7 @@ Go to Github account open deployment link at the top
 ```
 Give examples
 ```
-
+<!-- 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
@@ -98,4 +98,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
- -->
+ --> -->
