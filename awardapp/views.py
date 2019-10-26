@@ -212,7 +212,7 @@ def page(request,id):
             aver_content=0.0
    
 
-#     return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
+    return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
 
 # def search_results(request):
 
