@@ -82,7 +82,7 @@ class Comment(models.Model):
 class Rates (models.Model):
     design= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
     usability= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
-#     content= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
+    content= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
 #     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
 #     posted_by=models.ForeignKey(Profile,on_delete=models.CASCADE,null=True)
 #     project=models.IntegerField(default=0)  
