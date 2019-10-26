@@ -177,8 +177,8 @@ def like_it(request,id):
      image.likes=image.likes+1
      image.save()
      return redirect("newsToday")
-# @login_required(login_url='/accounts/login/') 
-# def page(request,id):
+@login_required(login_url='/accounts/login/') 
+def page(request,id):
    
 #     own_page=Project.objects.filter(id=id)
 #     all=Rates.objects.filter(project=id) 
