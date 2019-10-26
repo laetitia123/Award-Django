@@ -187,9 +187,9 @@ def page(request,id):
         if form.is_valid():
             rate = form.save(commit=False)
             rate.user = request.user
-#             rate.project =id
-#             rate.save()
-#         return redirect('own_page',id)
+            rate.project =id
+            rate.save()
+        return redirect('own_page',id)
         
 #     else:
 #         form = VotesForm() 
