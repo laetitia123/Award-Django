@@ -195,9 +195,9 @@ def page(request,id):
         form = VotesForm() 
         calcul=Rates.objects.filter(project=id)
         usability=[]
-#         design=[]
-#         content=[]
-#     for i in calcul:
+        design=[]
+        content=[]
+    for i in calcul:
 #         usability.append(i.usability)
 #         design.append(i.design)
 #         content.append(i.content)
