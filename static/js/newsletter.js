@@ -1,12 +1,12 @@
 $(document).ready(function(){
-    $('form').submit(function(event){
+    $('form1').submit(function(event){
       event.preventDefault()
-      form = $("form")
+      form = $("form1")
   
       $.ajax({
         'url':'/ajax/newsletter/',
         'type':'POST',
-        'data':form.serialize(),
+        'data':form1.serialize(),
         'dataType':'json',
         'success': function(data){
           alert(data['success'])
