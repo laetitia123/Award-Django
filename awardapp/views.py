@@ -202,11 +202,11 @@ def page(request,id):
         design.append(i.design)
         content.append(i.content)
 
-#         if len(usability)>0 or len(design)>0 or len(content)>0:
-#             aver_usability=round(sum(usability)/len(usability))
-#             aver_design=round(sum(design)/len(design))
-#             aver_content=round(sum(content)/len(content))
-#         else:
+        if len(usability)>0 or len(design)>0 or len(content)>0:
+            aver_usability=round(sum(usability)/len(usability))
+            aver_design=round(sum(design)/len(design))
+            aver_content=round(sum(content)/len(content))
+        else:
 #             aver_usability=0.0
 #             aver_design=0.0
 #             aver_content=0.0
