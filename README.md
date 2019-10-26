@@ -9,7 +9,7 @@ Go to Github account open deployment link at the top
  ### Prerequisites 
 
 
-     <!-- linux instalation 
+     linux instalation 
      update linux :sudo apt-get update
      intall paython 3.6: sudo apt-get install python3.6
      install pip:sudo apt-get install python3-pip 
@@ -22,11 +22,9 @@ Go to Github account open deployment link at the top
      python3.6 manage.py test gallery:migration
      python manage.py makemigrations gallery
      python3.6 manage.py sqlmigrate gallery 0001
-     python3.6 manage.py migrate -->
-```
-Give examples
-```
-<!-- 
+     python3.6 manage.py migrate 
+
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
