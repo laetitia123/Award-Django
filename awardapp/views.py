@@ -180,9 +180,9 @@ def like_it(request,id):
 @login_required(login_url='/accounts/login/') 
 def page(request,id):
    
-#     own_page=Project.objects.filter(id=id)
-#     all=Rates.objects.filter(project=id) 
-#     if request.method == 'POST':
+    own_page=Project.objects.filter(id=id)
+    all=Rates.objects.filter(project=id) 
+    if request.method == 'POST':
 #         form = VotesForm(request.POST)
 #         if form.is_valid():
 #             rate = form.save(commit=False)
