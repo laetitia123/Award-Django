@@ -221,7 +221,7 @@ def search_results(request):
         searched_articles = Project.search_by_title(search_term)
         message = f"{search_term}"
 
-#         return render(request, 'search.html',{"message":message,"projectes": searched_articles})
+        return render(request, 'search.html',{"message":message,"projectes": searched_articles})
 
 #     else:
 #         message = "You haven't searched for any term"
