@@ -8,7 +8,7 @@ Go to Github account open deployment link at the top
 
  ### Prerequisites 
 
-<!-- 
+
      <!-- linux instalation 
      update linux :sudo apt-get update
      intall paython 3.6: sudo apt-get install python3.6
@@ -17,7 +17,7 @@ Go to Github account open deployment link at the top
      install virtual :python3.6 -m venv virtual
      activate virtual: source virtual/bin/activate
      pip install django==1.11 :intall django
-     python3.6 manage.py runserver:to run App -->
+     python3.6 manage.py runserver:to run App 
      python3.6 manage.py check:migration
      python3.6 manage.py test gallery:migration
      python manage.py makemigrations gallery
