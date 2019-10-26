@@ -198,9 +198,9 @@ def page(request,id):
         design=[]
         content=[]
     for i in calcul:
-#         usability.append(i.usability)
-#         design.append(i.design)
-#         content.append(i.content)
+        usability.append(i.usability)
+        design.append(i.design)
+        content.append(i.content)
 
 #         if len(usability)>0 or len(design)>0 or len(content)>0:
 #             aver_usability=round(sum(usability)/len(usability))
