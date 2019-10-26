@@ -1,4 +1,4 @@
-#!/home/wecode/Documents/Award-Django/virtual/bin/python2
+#!/home/wecode/Documents/Award-Django/virtual/bin/python
 from django.core import management
 
 if __name__ == "__main__":

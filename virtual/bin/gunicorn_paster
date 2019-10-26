@@ -1,4 +1,4 @@
-#!/home/wecode/Documents/Award-Django/virtual/bin/python2
+#!/home/wecode/Documents/Award-Django/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
