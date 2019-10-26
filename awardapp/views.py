@@ -183,8 +183,8 @@ def page(request,id):
     own_page=Project.objects.filter(id=id)
     all=Rates.objects.filter(project=id) 
     if request.method == 'POST':
-#         form = VotesForm(request.POST)
-#         if form.is_valid():
+        form = VotesForm(request.POST)
+        if form.is_valid():
 #             rate = form.save(commit=False)
 #             rate.user = request.user
 #             rate.project =id
