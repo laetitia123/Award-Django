@@ -191,10 +191,10 @@ def page(request,id):
             rate.save()
         return redirect('own_page',id)
         
-#     else:
-#         form = VotesForm() 
-#         calcul=Rates.objects.filter(project=id)
-#         usability=[]
+    else:
+        form = VotesForm() 
+        calcul=Rates.objects.filter(project=id)
+        usability=[]
 #         design=[]
 #         content=[]
 #     for i in calcul:
