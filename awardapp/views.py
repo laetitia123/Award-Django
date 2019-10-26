@@ -197,22 +197,25 @@ def page(request,id):
         usability=[]
         design=[]
         content=[]
+        aver_usability=0
+        aver_design=0
+        aver_content=0
     for i in calcul:
         usability.append(i.usability)
         design.append(i.design)
         content.append(i.content)
 
         if len(usability)>0 or len(design)>0 or len(content)>0:
-            aver_usability=round(sum(usability)/len(usability))
-            aver_design=round(sum(design)/len(design))
-            aver_content=round(sum(content)/len(content))
+            aver_usability+=round(sum(usability)/len(usability))
+            aver_design+=round(sum(design)/len(design))
+            aver_content+=round(sum(content)/len(content))
         else:
             aver_usability=0.0
             aver_design=0.0
             aver_content=0.0
    
 
-    return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
+    return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"usability":aver_usability,"design":aver_design,"content":aver_content})
 
 def search_results(request):
 
