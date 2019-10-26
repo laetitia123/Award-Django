@@ -5,15 +5,14 @@
 
 
   
-<!-- 
-<div class="container">
+ <div class="container">
     <div class="row">
             {% for images in own_page %}
         <div class="col-md-4">
                 {{images.title}}  
     <img src="{{images.image.url}}"class="image-responsive" width="350" style="height:200px;margin-top:20px">
 </a>
-</div>
+</div> 
 
 
 </div>
@@ -100,10 +99,10 @@ aria-hidden="true">
             
     ggggggggggggggggggggggggg
    
-        {% for com in image.comment_set.all %}
+         {% for com in image.comment_set.all %}
         <p>comment:{{com.comment}}</p>
         {% endfor %}
-</body> -->
+</body> 
 
 <style>
     .d1{
@@ -118,7 +117,7 @@ aria-hidden="true">
   width: 100%;
   height: auto;
   opacity:0.9;
-}
+} 
 
 .title{
     position:absolute;
@@ -137,4 +136,4 @@ aria-hidden="true">
 </style>
 
 
-{% endblock %}
+ {% endblock %} 
