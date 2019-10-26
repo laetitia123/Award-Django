@@ -216,7 +216,7 @@ def page(request,id):
 
 def search_results(request):
 
-    # if 'article' in request.GET and request.GET["article"]:
+    if 'article' in request.GET and request.GET["article"]:
         # search_term = request.GET.get("article")
         # searched_articles = Project.search_by_title(search_term)
 #         message = f"{search_term}"
