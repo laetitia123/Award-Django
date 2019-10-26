@@ -58,9 +58,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv()
 # SECRET_KEY = '1#hlch2%=_m%lciy6+075eqis^n69q4%gy6&n(q#sy2n!3ar^@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -174,8 +174,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
