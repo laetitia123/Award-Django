@@ -5,12 +5,24 @@ for others project
 
 ## Getting Started
 Go to Github account open deployment link at the top 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-<!-- ### Prerequisites
+ ### Prerequisites 
 
-What things you need to install the software and how to install them
-
+<!-- 
+     linux instalation 
+     update linux :sudo apt-get update
+     intall paython 3.6: sudo apt-get install python3.6
+     install pip:sudo apt-get install python3-pip 
+     install Pyperclip module :python3.6 -m pip install pyperclip
+     install virtual :python3.6 -m venv virtual
+     activate virtual: source virtual/bin/activate
+     pip install django==1.11 :intall django
+     python3.6 manage.py runserver:to run App
+     python3.6 manage.py check:migration
+     python3.6 manage.py test gallery:migration
+     python manage.py makemigrations gallery
+     python3.6 manage.py sqlmigrate gallery 0001
+     python3.6 manage.py migrate -->
 ```
 Give examples
 ```
