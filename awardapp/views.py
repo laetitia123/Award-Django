@@ -214,7 +214,7 @@ def page(request,id):
 
     return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
 
-# def search_results(request):
+def search_results(request):
 
     # if 'article' in request.GET and request.GET["article"]:
         # search_term = request.GET.get("article")
