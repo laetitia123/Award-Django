@@ -41,11 +41,16 @@ INSTALLED_APPS = [
     'awardapp',
     'bootstrap4',
     'rest_framework',
-
+    'rest_framework.authtoken',
     'tinymce',
 
 
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

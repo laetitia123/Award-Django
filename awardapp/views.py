@@ -9,7 +9,7 @@ from .forms import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
-from .serializer import MerchSerializer,Profile
+from .serializer import MerchSerializer,MerchSerializerpro
 
 
 class MerchList(APIView):
@@ -17,10 +17,10 @@ class MerchList(APIView):
         all_merch = Project.objects.all()
         serializers = MerchSerializer(all_merch, many=True)
         return Response(serializers.data)
-class MerchList(APIView):
+class MerchListpro(APIView):
     def get(self, request, format=None):
-        all_merch = Project.objects.all()
-        serializers = Profile(all_merch, many=True)
+        all_merch = Profile.objects.all()
+        serializers =MerchSerializerpro(all_merch, many=True)
         return Response(serializers.data)
 def newsletter(request):
     name = request.POST.get('your_name')
@@ -177,9 +177,52 @@ def like_it(request,id):
      image.likes=image.likes+1
      image.save()
      return redirect("newsToday")
-@login_required(login_url='/accounts/login/') 
-def page(request,id):
+# @login_required(login_url='/accounts/login/') 
+# def page(request,id):
    
-    own_page=Project.objects.filter(id=id)
-  
-    return render(request, 'page.html', {"own_page": own_page})
+#     own_page=Project.objects.filter(id=id)
+#     all=Rates.objects.filter(project=id) 
+#     if request.method == 'POST':
+#         form = VotesForm(request.POST)
+#         if form.is_valid():
+#             rate = form.save(commit=False)
+#             rate.user = request.user
+#             rate.project =id
+#             rate.save()
+#         return redirect('own_page',id)
+        
+#     else:
+#         form = VotesForm() 
+#         calcul=Rates.objects.filter(project=id)
+#         usability=[]
+#         design=[]
+#         content=[]
+#     for i in calcul:
+#         usability.append(i.usability)
+#         design.append(i.design)
+#         content.append(i.content)
+
+#         if len(usability)>0 or len(design)>0 or len(content)>0:
+#             aver_usability=round(sum(usability)/len(usability))
+#             aver_design=round(sum(design)/len(design))
+#             aver_content=round(sum(content)/len(content))
+#         else:
+#             aver_usability=0.0
+#             aver_design=0.0
+#             aver_content=0.0
+   
+
+#     return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
+
+# def search_results(request):
+
+#     if 'article' in request.GET and request.GET["article"]:
+#         search_term = request.GET.get("article")
+#         searched_articles = Project.search_by_title(search_term)
+#         message = f"{search_term}"
+
+#         return render(request, 'search.html',{"message":message,"projectes": searched_articles})
+
+#     else:
+#         message = "You haven't searched for any term"
+#         return render(request, 'search.html',{"message":message})

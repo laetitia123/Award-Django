@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django .core.validators import MaxValueValidator
 
 class Project(models.Model):
     title = models.CharField(max_length =60)
@@ -13,6 +14,11 @@ class Project(models.Model):
     image = models.ImageField(upload_to = 'projectes/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projectes')
     link=models.CharField(max_length =60)
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        images = cls.objects.filter(title__icontains=search_term)
+        return images
 
 
     def save_image(self):
@@ -52,7 +58,7 @@ class Profile(models.Model):
     contact= models.TextField(default="Any")
     profile_picture = models.ImageField(
         upload_to='users/', default='users/user.png')
-    bio = models.TextField(default="Welcome !")
+    bios= models.TextField(default="Welcome !")
 
     
 
@@ -73,3 +79,10 @@ class Comment(models.Model):
     def get_comment(self,id):
         comments=Comment.objects.filter(image_id=id)
         return comments
+class Rates (models.Model):
+#     design= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
+#     usability= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
+#     content= models.PositiveIntegerField(default=0 ,validators=[MaxValueValidator(10)])
+#     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+#     posted_by=models.ForeignKey(Profile,on_delete=models.CASCADE,null=True)
+#     project=models.IntegerField(default=0)  
