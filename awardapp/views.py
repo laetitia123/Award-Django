@@ -207,9 +207,9 @@ def page(request,id):
             aver_design=round(sum(design)/len(design))
             aver_content=round(sum(content)/len(content))
         else:
-#             aver_usability=0.0
-#             aver_design=0.0
-#             aver_content=0.0
+            aver_usability=0.0
+            aver_design=0.0
+            aver_content=0.0
    
 
 #     return render(request, 'page.html', {"own_page": own_page,"all":all,"form":form,"aver_usability,":aver_usability,"design":aver_design,"content":aver_content})
