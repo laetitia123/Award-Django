@@ -1,12 +1,13 @@
-<!-- # Project Title
+# Award-Django-App
+This project will help users to view others project(posted project) and be able to vote
+for others project
 
-One Paragraph of project description goes here
 
 ## Getting Started
-
+Go to Github account open deployment link at the top 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+<!-- ### Prerequisites
 
 What things you need to install the software and how to install them
 
