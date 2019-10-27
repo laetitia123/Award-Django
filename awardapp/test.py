@@ -1,50 +1,108 @@
 from django.test import TestCase
-from .models import Image,User
+
+# Create your tests here.
+from django.test import TestCase
+
+# Create your tests here.
+from django.test import TestCase
+from .models import Project,User,Profile,Comment
 import datetime as dt
 
-
-
 class ImageTestClass(TestCase):
-  
+    '''
+    images test method
+    '''
     def setUp(self):
-        self.user1 = User(username="laetitia")
+
+        self.user1 = User(username='dukunde')
         self.user1.save()
-        self.image = Image(image='amezing',name='laetitia',caption='bad',profile=self.user1)
+        
+        
+        self.image=Project(name='leaves',description='beautiful',user=self.user1,likes="1",post="image")
+        self.image.save_image()
 
-  
+ 
     def test_instance(self):
-        self.assertTrue(isinstance(self.image,  Image))
+        self.assertTrue(isinstance(self.image,Project))
 
-  
     def test_save_method(self):
+        '''
+        test image by save
+        '''
         self.image.save_image()
-        images = Image.objects.all()
-        self.assertTrue(len(images)>0)
+        images=Image.objects.all()
+        self.assertTrue(len(images)>0) 
+   
+
+    def test_delete_method(self):
+        '''
+        test of delete image
+        '''
+       
+        Project.objects.all().delete()
 
    
-    def test_delete_method(self):
-        self.image2 = Image(image='Laetitia1',name='computer',caption="none",profile=self.user1)
-        self.image2.save_image()
+    
+    def test_filter_by_name(self):
+        '''
+        test of filter image by location
+        '''
         self.image.save_image()
-        self.image.delete_image()
-        images = Image.objects.all()
-        self.assertEqual(len(images),1)
-   
-class Profiletest(TestCase):
-   
+        img=self.image.filter_by_name(self.image.name)
+        image=Image.objects.filter(name=self.image.name)
+        self.assertTrue(img,image)
+
+class CommentTestClass(TestCase):
 
     def setUp(self):
-        self.tempprofiles = []
-        for i in range(self.users):
-            tmp = Profile()
-            tmp.save()
-            self.tempprofiles.append(tmp)
+     
+        self.user1 = User(username='dukunde')
+        self.user1.save()
+        self.nature=Profile(2,user=self.user1,bio='Nature')
+        self.nature.save_prof()
 
-    def test_follow(self):
-        follower = Profile()
-        follower.save()
-        for i in self.tempprofiles:
-            follower.follow(i)
-            self.assertEquals(follower.following.count(), self.users)
-        for u in self.tempprofiles:
-            self.assertEquals(u.followers.count(), 1)
+        self.james=Project(2,name='amani',description='thisis my website',user=self.user1,post="project")
+        self.james.save_image()
+      
+        self.com=Comment(comment='amezing',comment_image=self.james,posted_by=self.nature,)
+        self.com.save_com()
+
+ 
+    def test_instance(self):
+
+        self.assertTrue(isinstance(self.com,Comment))    
+        
+    def test_save_method(self):
+        
+        self.com.save_com()
+        comm=Comment.objects.all()
+        self.assertTrue(len(comm)>0) 
+    def test_delete_method(self):
+       
+  
+        Comment.objects.all().delete()
+   
+class ProfileTestClass(TestCase):
+    
+    def setUp(self):
+        self.user1 = User(username='laetitia)
+        self.user1.save()
+        self.nature=Profile(2,user=self.user1,bio='hello wrold')
+        self.nature.save_prof()
+
+ 
+    def test_instance(self):
+        self.assertTrue(isinstance(self.nature,Profile))
+
+         
+    def test_save_method(self):
+      
+      
+        self.nature.save_prof()
+        comm=Profile.objects.all()
+        self.assertTrue(len(comm)>0) 
+
+    def test_delete_method(self):
+      
+  
+        Profile.objects.all().delete()
