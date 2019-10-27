@@ -21,12 +21,12 @@ class Project(models.Model):
         return images
 
 
-    def save_image(self):
+    def save_project(self):
         
         self.save()
 
     
-    def delete_image(self):
+    def delete_project(self):
        
         self.delete()
 

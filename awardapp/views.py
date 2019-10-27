@@ -32,7 +32,6 @@ def newsletter(request):
     data = {'success': 'You have been successfully added to mailing list'}
     return JsonResponse(data)
 
-@login_required(login_url='/accounts/login/') 
 def news_today(request):
     date = dt.date.today()
     images= Project.todays_news()

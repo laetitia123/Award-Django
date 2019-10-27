@@ -1,14 +1,22 @@
 # Award-Django-App
 This project will help users to view others project(posted project) and be able to vote
-for others project
+for others project,user will also be able to make coment on the project.
+user have to be logged in to view all functionality.
 
 
 ## Getting Started
-Go to Github account open deployment link at the top 
+* Go to Github account open deployment link at the top 
+* or clone ( typr git clone link to github  in terminal)
+* do all installation required
+* do run app with (python3.6 manage.py runserver)
 
  ### Prerequisites 
 
 
+
+
+
+### Installing
      linux instalation 
      update linux :sudo apt-get update
      intall paython 3.6: sudo apt-get install python3.6
@@ -23,9 +31,6 @@ Go to Github account open deployment link at the top
      python manage.py makemigrations gallery
      python3.6 manage.py sqlmigrate gallery 0001
      python3.6 manage.py migrate 
-
-
-### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -43,29 +48,10 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+https://awardlaety.herokuapp.com
 
 ## Built With
 
@@ -83,9 +69,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **laetitia** (https://github.com/laetitia123)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 

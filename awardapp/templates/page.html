@@ -3,40 +3,57 @@
 {% block content %} 
 {{ block.super}}
 
-
-  
- <div class="container">
-    <div class="row">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+<body>
+        
+ <div class="container-fluid">
+    <div class="row"> 
             {% for images in own_page %}
-        <div class="col-md-4">
-                {{images.title}}  
-    <img src="{{images.image.url}}"class="image-responsive" width="350" style="height:200px;margin-top:20px">
+            
+        <header style="background-image: url('{{images.image.url}}')">
+                <h1 class="me">{{images.title}} </h1>
+                <h3 style="color:white;padding-top:50px;">site of the Day{{images.pub_date}}</h3>
+                <a href="{{images.link}}"  target="_blank"><button class="btn btn-outline-success" style="border-radius:50px;margin-left:20px;margin-top:450px;" >visite site</button></a>
+    <!-- <img src="{{images.image.url}}"class="image-responsive" width="350" style="height:200px;margin-top:20px"> -->
 </a>
-</div> 
+</header> 
 
 
 </div>
 
 </div>         
-<div class="row design">
+<div class="row rate">
         
     <div class="col-md-3">
-            <h3>Content </h3><hr class="bg-default"><br><h4>{{content}}</h4>
+           <buton class="btn btn-outline-info"style="width:200px;border-radius:25px;;"><h3>Content </h3><h4>{{content}}</h4></buton> 
         </div><br>
+        <div class="col-md-1"></div>
         <div class="col-md-3">
-                <h3>Usability </h3><hr class="bg-default"><br><h4>{{usability}}</h4>
+        <buton class="btn btn-outline-info"style="width:200px;border-radius:25px;;"><h3>Usability </h3><h4>{{usability}}</h4></buton>
         </div><br>
-        <div class="col-md-3">
-                <h3>Design</h3><hr class="bg-default"><br><h4>{{design}}</h4>
+        <div class="col-md-2"></div>
+        <div class="col-md-3  bo">
+        <buton class="btn btn-outline-info"style="width:200px;border-radius:25px;;">  <h3>Design</h3><h4>{{design}}</h4></buton>
         </div>
 </div>
         
 
 
-<a href="{{images.link}}" class="btn btn-pink btn-md pull-right" target="_blank"><i class="far fa-chevron-double-right"></i></a>
-<button class="btn btn-outline-info" type="button" data-target="#votesform" data-toggle="modal">Rating</button>
-        <br> 
-not typed
+
+<button class="btn btn-outline-info" style="margin-left: 400px;margin-top:50px;" type="button" data-target="#votesform" data-toggle="modal">Rating</button>
+       
+        <a href="{% url 'comment' images.id %}"><button class="btn btn-outline-info"style="float:300px;margin-top:50px;">write your comment here</button></a> 
+      
+        <br>
+
+
  <div class="modal fade" id="votesform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
@@ -47,7 +64,7 @@ aria-hidden="true">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
     </button>
-  </div> -->
+  </div> 
   <div class="modal-body mx-3">
             <div class="form animated slideInDown">
                             <form action="{% url 'own_page' images.id %}"method="POST">
@@ -62,19 +79,24 @@ aria-hidden="true">
 </div>
 </div>
 </div>
-<a href="{% url 'comment' images.id %}"><button class="btn btn-success">write your comment here</button></a> 
-            <br>
+
+
 {% endfor %}
   
      
-     <div class="card comments">
-            <div class="card-header">
-                    <h4> Total Votes: {{all|length}} </h4>
+     <div class="container">
+    <div class="row">
+
+             <div class="col-sm-4"></div>
+             <div class="col-sm-6">
+                    <h4 style="margin-top:40px;"> Total Votes: {{all|length}} </h4>
             </div>
+    </div>
+    <div class="row">
             <div class="list-group">
                     <ul class="list-group">
                             {%if all%}
-                            <table id='comm' class="table">
+                            <table  class="table">
                                     <th>Voters</th>
                                     <th>Rating</th>
                                     {%for one in all%}<tr> 
@@ -88,52 +110,73 @@ aria-hidden="true">
                                             </td>
                                             {%endfor%}
                             </table>
-                            {%else%}
-                            <li class="list-group-item alert alert-info">No votes Available</li>
-                            {%endif%}
+                           
+                            {%endif%} 
                     </ul>
             </div>
     </div>
     
-    <div>
-            
-    ggggggggggggggggggggggggg
+    
+    </div>   
+  
    
          {% for com in image.comment_set.all %}
         <p>comment:{{com.comment}}</p>
         {% endfor %}
-</body> 
+<footer style="background-color: black;color:white;font-family: 'Times New Roman', Times, serif;
+text-transform: capitalize;margin-top:40px;padding-top:80px;height:200px;text-align:center;">
+<h3>copyright Laetitia |all right reserved| 2019 </h3>
+</footer> 
 
 <style>
-    .d1{
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius:50%;
-    background-color: black;    
+      
+    h1{
+    position:absolute;
+    padding-left:30%;
+    top:60%;
+    text-align: center;  
+    color:white;
+    font-size:54px;
+    font-family: 'Times New Roman', Times, serif;
     }
-.header{
-  position: relative;
+    .h3{
+    position:absolute;
+    padding-left:30%;
+    top:60%;
+    text-align: center;  
+    color:blanchedalmond;
+    font-size:54px;
+    font-family: 'Times New Roman', Times, serif;      
+    }
+header{
+  position:reletive;
   width: 100%;
-  height: auto;
-  opacity:0.9;
+  height:700px;
+  background-size:cover;
+  background-position: no-repeat;
+  background-color: black;
+  opacity:0.8;
 } 
 
-.title{
+.rate{
     position:absolute;
-    top:50%;
-    left:30%;
+    top:90%;
+    left:40%;
     transform: translate(-50%,-50%);
     color:white;
     font-size:50px;
-    font-family:'Grand Hotel',cursive ;
+    font-family:'Times New Roman', Times, serif;
 }
-.bt{
-  position: absolute;
-  bottom: 20px;
-  left: 20px; 
-}
-</style>
+.table{
+        margin-left:300px;
+        margin-top:50px;
 
+}
+
+
+</style>
+</body>
+</html>
+  
 
  {% endblock %} 

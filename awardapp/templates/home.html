@@ -14,10 +14,11 @@
 </head>
 <body >
   <header>
-    <div class="me">
-<p >site of the  Day October24,2019</p>
-<p id="p">webVR site for The White Tower</p>
-<button class="btn btn-info" id="button">visite site</button>
+    <div class="mee">
+      
+<h3>site of the  Day October24,2019</h3>
+<h2>webVR site for The White Tower</h2>
+<button class="btn btn-info" >visite site</button>
     </div>
   </header>
 
@@ -45,7 +46,7 @@
         <!-- alt="{{image.user.user.username}}" width="30" height="30"> -->
       </div>
     <!-- <p><button class="btn btn-primary">vote now</button></p> -->
-    <strong style="color: #333333;cursor: pointer;margin-top:130px">{{image.title}}</strong></h6>
+    <stron><h6 style="color: #333333;cursor: pointer;padding-top:30px">{{image.title}}</strong></h6>
     <h6 style="margin-left:150px;">{{image.pub_date }}</h6><br></br>
     <h6>
        <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32"> 
@@ -57,18 +58,19 @@
     <br>
     
    
-        
+       
       
   {% for com in image.comment_set.all %}
-                <p>comment:{{com.comment}}</p>
+ 
+                <h3>comment:{{com.comment}}</h3>
                 {% endfor %}
               <hr>
             
                        
               <!-- <a  class="btn" href="{% url 'like' id=image.id%}" >      -->
               <!-- <h6 >{{image.likes}} Likes</h6> -->
-<a href="{% url 'own_page' image.id %}"><button class="btn btn-outline-info">VIEW PROJECT</button></a>
-    
+<p><a href="{% url 'own_page' image.id %}"><button class="btn btn-outline-info">VIEW PROJECT</button></a>
+</p>
     </div>
     </div>
     </div>
@@ -132,17 +134,17 @@
 .bg-six {background-image: url(http://blog.whitepages.com/wp-content/uploads/2015/04/san-franc.jpg);} */
 
 
-button{
+p{
     display: none;
     font-size: 35px;
-    color: #ffffff !important;
+    color: black !important;
     font-family: sans-serif;
     text-align: center;
-    margin: auto;
+    margin:150px;
     position: absolute;
-    top: 0;
+    top:0;
     left: 0;
-    bottom: 0;
+    bottom:0;
     right: 0;
     height: 50px;
     cursor: pointer;
@@ -159,27 +161,28 @@ button{
 
 .parent:hover .child:before, .parent:focus .child:before {
     display: block;
+    background-color:black;
 }
 
-.parent:hover button, .parent:focus button{
+.parent:hover p, .parent:focus p{
     display: block;
 }
 
 .child:before {
     content: "";
     display: none;
-    /* height:100%;
-    width:500px; */
+    height:95%;
+    width:500px; 
     position: absolute;
     top: 0;
     left: 0;
-    background-color:black;
+    background-color:black !important;
     opacity:0.6;
 }
 
 /* Media Queries */
 @media screen and (max-width: 960px) {
-    .parent {width: 100%; margin: 20px 0px}
+    .parent {width: 100%; margin: 30px 0px}
         .wrapper {padding: 20px 20px;}
 }
 
@@ -191,7 +194,7 @@ button{
 
  
  
-  .me{
+  .mee{
     background-image:url('/static/images/award.jpg');
     
     height:700px;
@@ -216,12 +219,12 @@ button{
     opacity:0,5;
   }
   #button{
-    margin-top:150px;
+    margin-top:750px;
     margin-left:50px;
     border-radius: 25px;
     width:100px;
   }
-  #p{
+  h2{
     font-size:45px;
     text-transform: capitalize;
     text-align:center;
@@ -238,8 +241,13 @@ button{
 <!--End of the block content-->
  {{block.super}}
   <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
-
+  <footer style="background-color: black;color:white;font-family: 'Times New Roman', Times, serif;
+  text-transform: capitalize;margin-top:40px;padding-top:80px;height:150px;text-align:center;">
+  <h3>copyright Laetitia | all right reserved | 2019 </h3>
+  </footer> 
+  
 {% endblock %}
+
 </div>
 </body>
 
