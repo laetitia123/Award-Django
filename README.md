@@ -1,4 +1,5 @@
 # Award-Django-App
+
 This project will help users to view others project(posted project) and be able to vote
 for others project,user will also be able to make coment on the project.
 user have to be logged in to view all functionality.
@@ -10,7 +11,14 @@ user have to be logged in to view all functionality.
 * do all installation required
 * do run app with (python3.6 manage.py runserver)
 
- ### Prerequisites 
+ ### API 
+
+    Install pip install djangorestframework
+    download Postman
+    crate a serializer file
+    This is the token :"d0eb96d4b70c17e44b10064a4bf5297cf095fc7a"
+    project api  url :http://127.0.0.1:8000/api/merch/
+    profile api url: http://127.0.0.1:8000/api/merchpro/
 
 
 
@@ -32,42 +40,22 @@ user have to be logged in to view all functionality.
      python3.6 manage.py sqlmigrate gallery 0001
      python3.6 manage.py migrate 
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+>BDD
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
+  * A user will be able to see to sign in and sign up
+  * A user, will be able  to see projects post by users
+  * A user,  will be able to comment on a project
+  * A user,  will be able to vote a project 
+  * A user wilbe able to view the  project in full  by clicking  on view site button.
 
 ## Deployment
 
 https://awardlaety.herokuapp.com
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
+## Author
 
 * **laetitia** (https://github.com/laetitia123)
 
@@ -76,9 +64,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
- --> -->
