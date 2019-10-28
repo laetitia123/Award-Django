@@ -1,24 +1,21 @@
 from django.test import TestCase
 
-# Create your tests here.
 from django.test import TestCase
 
-# Create your tests here.
+
 from django.test import TestCase
 from .models import Project,User,Profile,Comment
 import datetime as dt
 
 class ImageTestClass(TestCase):
-    '''
-    images test method
-    '''
+   
     def setUp(self):
 
-        self.user1 = User(username='dukunde')
+        self.user1 = User(username='laetitia')
         self.user1.save()
         
         
-        self.image=Project(name='leaves',description='beautiful',user=self.user1,likes="1",post="image")
+        self.image=Project(name='amezing',description='django app',user=self.user1,likes="1",post="project")
         self.image.save_image()
 
  
@@ -26,42 +23,29 @@ class ImageTestClass(TestCase):
         self.assertTrue(isinstance(self.image,Project))
 
     def test_save_method(self):
-        '''
-        test image by save
-        '''
+        
         self.image.save_image()
         images=Image.objects.all()
         self.assertTrue(len(images)>0) 
    
 
     def test_delete_method(self):
-        '''
-        test of delete image
-        '''
+        
        
         Project.objects.all().delete()
 
    
-    
-    def test_filter_by_name(self):
-        '''
-        test of filter image by location
-        '''
-        self.image.save_image()
-        img=self.image.filter_by_name(self.image.name)
-        image=Image.objects.filter(name=self.image.name)
-        self.assertTrue(img,image)
-
+   
 class CommentTestClass(TestCase):
 
     def setUp(self):
      
-        self.user1 = User(username='dukunde')
+        self.user1 = User(username='LAETITIA')
         self.user1.save()
         self.nature=Profile(2,user=self.user1,bio='Nature')
         self.nature.save_prof()
 
-        self.james=Project(2,name='amani',description='thisis my website',user=self.user1,post="project")
+        self.james=Project(2,name='PACY',description='thisis my website',user=self.user1,post="project")
         self.james.save_image()
       
         self.com=Comment(comment='amezing',comment_image=self.james,posted_by=self.nature,)
