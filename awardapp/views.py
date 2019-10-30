@@ -80,31 +80,13 @@ def new_article(request):
 def mine(request,username=None):
     current_user=request.user
     pic_images=Project.objects.filter(user=current_user)
-    # profile=Profile.objects.filter(user=current_user).first()
     if not username:
       username=request.user.username
       projectes = Project.objects.filter(title=username)
       user_object = request.user
   
     return render(request, 'myprofile.html', locals(),{"pic_images":pic_images})
-# @login_required(login_url='/accounts/login/')
-# def edit(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         print(request.FILES)
-#         new_profile = ProfileForm(request.POST,request.FILES,
-#             instance=request.user
-#         )
-#         if new_profile.is_valid():
-#             # new_profile.user= current_user
-#             # print(new_profile.user)
-#             new_profile.save()
-#             print(new_profile.fields)
-#             # print(new_profile.fields.profile_picture)
-#             return redirect('myaccount')
-#     else:
-#         new_profile = ProfileForm()
-#     return render(request, 'edit.html', {"new_profile":new_profile})
+
     
 @login_required(login_url='/accounts/login/')
 def edit(request):

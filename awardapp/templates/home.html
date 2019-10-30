@@ -34,13 +34,13 @@
       <h5><strong>Mobile Excellence </strong>Site of the week</h5>
     </div>
   </div>
-  <div class="row">
 
+  <div class="row">
   {% for image in images %}
  
 
   
-      <div class="col-sm-4" width="300px;" style="border:1px solid whitesmoke;padding-top:20px;" >
+      <div class="col-sm-6" width="400px" style="border:1px solid whitesmoke;padding-top:20px;" >
           <div class="wrapper">
               <div class="parent" onclick="">
                   <div class="child bg-one">
@@ -50,15 +50,15 @@
               <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong>
               <p style="margin-left:520px;margin-top:-50px;font-size:30px;">...</p> -->
          
-        <img src="{{image.image.url}} " id="image" style=" margin-bottom:20px;height:300px" class="img-fluid"  alt="Image">
+        <img src="{{image.image.url}} " id="image" style=" margin-bottom:20px;" class="img-fluid"  alt="Image">
         <!-- alt="{{image.user.user.username}}" width="30" height="30"> -->
       </div>
-    <!-- <p><button class="btn btn-primary">vote now</button></p> -->
+  
     <stron><h6 style="color: #333333;cursor: pointer;padding-top:30px">{{image.title}}</strong></h6>
     <h6 style="margin-left:150px;">{{image.pub_date }}</h6><br></br>
     <h6>
        <img src="{{user.profile.profile_picture.url}}" class="img-circle"  width="32" height="32"> 
-       by 
+      Posted  by 
        <strong style="color: #333333;cursor: pointer">{{user.profile.Name}}</strong></h6>
   
     <!-- <a href="{% url 'like' id=image.id%}"><i class="fa fa-heart-o" style="color: black;size: 150px;"></i></a> -->
@@ -66,11 +66,12 @@
     <br>
     
    
-       
+    <span style="color:red;">comments</span>
+    <hr>
       
   {% for com in image.comment_set.all %}
  
-                <h3>comment:{{com.comment}}</h3>
+                <h6>{{com.comment}}     <strong><span style="margin-left:20px;">{{user.profile.Name}}</span></h6>
                 {% endfor %}
               <hr>
             
@@ -86,7 +87,7 @@
  
 
           
-
+ 
 
 {% endfor %}
 </div>

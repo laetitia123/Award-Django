@@ -6,7 +6,7 @@ from .models import *
 class Post_image_Form(forms.Form):
     class Meta:
          model=Project
-         exclude=('user',)
+         exclude=('user','profile')
 
 class ProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
