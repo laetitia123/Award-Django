@@ -21,7 +21,7 @@ class Project(models.Model):
         return images
 
 
-    def save_project(self):
+    def save_image(self):
         
         self.save()
 
@@ -60,6 +60,10 @@ class Profile(models.Model):
         upload_to='users/', default='users/user.png')
     bios= models.TextField(default="Welcome !")
 
+    
+  
+    def save_profile(self):
+        self.save ()
     
 
     @classmethod
