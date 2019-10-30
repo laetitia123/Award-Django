@@ -35,12 +35,7 @@ class Project(models.Model):
        
         pass
 
-    @classmethod
-    def todays_news(cls):
-        today = dt.date.today()
-        images = cls.objects.filter(pub_date__date = today)
-        return images
-
+    
     @classmethod
     def days_news(cls,date):
         news = cls.objects.filter(pub_date__date = date)

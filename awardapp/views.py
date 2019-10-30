@@ -34,7 +34,7 @@ def newsletter(request):
 
 def news_today(request):
     date = dt.date.today()
-    images= Project.todays_news()
+    images= Project.objects.all()
     current_user=request.user
     myprof=Profile.objects.filter(id=current_user.id).first()
     
